@@ -1,0 +1,86 @@
+/*-підключення шрифтів-*/
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+
+  @font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+  }
+
+  @font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+} 
+
+:root {
+  --white: #FFFFFF;
+  --black: #2F2F2F;
+  --blue: #407BFF;
+  --light-blue: #ECF2FF;
+  --error: #EF5050;
+  --light-blue-2: #9EBBFF;
+  --orange: #FF9D43;
+  --light-blue-3: #D7E3FF;
+}
+
+body {
+  font-family: "Roboto", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  color: var(--black);
+}
+
+/* reset styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
