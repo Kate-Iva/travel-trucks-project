@@ -1,35 +1,20 @@
-/*-підключення шрифтів-*/
-@font-face {
-  font-family: "Roboto";
-  src: url("./fonts/Roboto-Regular.ttf");
-  font-weight: 400;
-}
 
-  @font-face {
-  font-family: "Roboto";
-  src: url("./fonts/Roboto-Medium.ttf");
-  font-weight: 500;
-  }
-
-  @font-face {
-  font-family: "Roboto";
-  src: url("./fonts/Roboto-Bold.ttf");
-  font-weight: 700;
-} 
 
 :root {
-  --white: #FFFFFF;
-  --black: #2F2F2F;
-  --blue: #407BFF;
-  --light-blue: #ECF2FF;
-  --error: #EF5050;
-  --light-blue-2: #9EBBFF;
-  --orange: #FF9D43;
-  --light-blue-3: #D7E3FF;
+	--main: #101828;
+	--text: #475467;
+	--white: #fff;
+	--inputs: #f7f7f7;
+	--badges: #f2f4f7;
+	--gray: #6c717b;
+	--gray-light: #dadde1;
+	--button: #e44848;
+	--button-hover: #d84343;
+	--rating: #ffc531;
 }
 
 body {
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
 
