@@ -10,11 +10,11 @@
     font-weight: 500;
     font-size: 48;
     text-align: center;
-    color: var(--secondary-red);
+    color: #e44848;
 }
 
 .errorIcon {
     height: 100px;
     width: 100px;
-    color: var(--secondary-red);
+    color: #e44848;
 }
