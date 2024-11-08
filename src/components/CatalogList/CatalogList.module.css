@@ -1,0 +1,22 @@
+.campersListWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 888px;
+    gap: 32px;
+}
+
+.loadMoreBtn {
+    align-self: center;
+    padding: 16px 32px;
+    width: 145px;
+    border: 1px solid var(--gray-light);
+    background-color: var(--white);
+    transition: border-color ease-in-out 200ms;
+    color: #101828;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn.active {
+    background-color: var(--white);
+    border-color: var(--button-hover);
+}

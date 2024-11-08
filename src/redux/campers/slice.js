@@ -19,7 +19,7 @@ const campersSlice = createSlice({
       state.camper = null;
     },
   },
-  
+
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
@@ -27,9 +27,21 @@ const campersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
+        console.log('Fetched campers item: ', action.payload.items);
+
         state.status = 'idle';
-        state.items = [...state.items, ...action.payload.items];
+
+        const existingIds = new Set(state.items.map((item) => item.id));
+
+        const newItems = action.payload.items.filter(
+          (item) => !existingIds.has(item.id),
+        );
+
+        state.items = [...state.items, ...newItems];
         state.total = action.payload.total;
+        console.log('Fetched items: ', state.items);
+        console.log('Fetched total: ', state.total);
+
         state.isLoading = false;
       })
       .addCase(fetchCampers.rejected, (state) => {

@@ -8,6 +8,9 @@ export const fetchCampers = createAsyncThunk(
   async (thunkApi) => {
     try {
       const response = await axios.get('/campers');
+
+      console.log(response.data);
+      
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error) && error.response) {

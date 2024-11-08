@@ -1,0 +1,108 @@
+.catalogItemWrap {
+    gap: 24px;
+    border-radius: 20px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+    display: flex;
+    width: 888px;
+    min-height: 368px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.img {
+    width: 292px;
+    height: 320px;
+      border-radius: 10px;
+    object-fit: cover;  
+    flex-shrink: 0;
+    background: lightgray -57.393px -4.801px / 195.679% 103.001% no-repeat;
+}
+
+.infoBlock {
+       width: 525px;
+    gap: 24px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewsTitleBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titleBlock {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleBlock h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--main);
+}
+
+.price {
+    display: flex;
+    gap: 12px;
+}
+
+.price span {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--main);
+}
+
+.heart,
+.star,
+.map {
+       height: 24px;
+    width: 26px; 
+    display: flex;
+    align-self: center;
+    flex: 1 0 0;
+}
+
+.heart {
+    cursor: pointer;
+}
+.heart:hover {
+    fill: var(--button);
+}
+.star {
+    fill: var(--rating);
+}
+
+.favorite {
+    fill: var(--button);
+}
+
+.reviewsMap {
+    display: flex;
+    gap: 16px;
+}
+
+.reviewsBlock,
+.mapBlock {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.comment {
+     font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;  
+    overflow: hidden;
+    color: var(--text);
+    text-overflow: ellipsis;
+}
+
+.showMoreBtn {
+    color: var(--white) !important;
+}
