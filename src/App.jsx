@@ -1,19 +1,28 @@
-//import React from "react";
-import "../src/App.module.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import styles from './App.module.css';
+import Header from './components/Header/Header.jsx';
+import { lazy, Suspense } from 'react';
+
+
+const HomePage = lazy(() => import('../src/pages/HomePage/HomePage.jsx'));
+const Catalog = lazy(() => import('../src/pages/Catalog/Catalog.jsx'));
+const CamperDetail = lazy(() => import('../src/pages/CamperDetail/CamperDetail.jsx'));
 
 const App = () => {
-return (
-  <div className="App">
-<header className="AppHeader">
-<div className="logo">Logo</div>
-<p className="home">Home</p>
-<p className="catalog">Catalog</p>
-<div></div>
-</header>
 
-  </div>
-)
-
-}
-
-export default App
+  return (
+    <BrowserRouter>
+      <div className={styles.container}>
+        <Suspense fallback={null}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/catalog/:id" element={<CamperDetail />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </BrowserRouter>
+  );
+};
+export default App;

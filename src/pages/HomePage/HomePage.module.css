@@ -1,0 +1,65 @@
+.homePage {
+  height: 100vh;
+  width: 100%;
+  background-image: url(../../images/home.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+@media screen and (min-resolution: 2dppx),
+  (min-resolution: 192dpi),
+  (min-device-pixel-ratio: 2) {
+  .homePage {
+    background-image: url(../../images/home_x2.png);
+  }
+}
+.container {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+ justify-content: start;
+  padding-left: 64px;
+  padding-right: 64px;
+}
+.content {
+  color: var(--white);
+  margin-top: 260px;
+}
+.mainTitle {
+  margin-bottom: 16px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  color: var(--inputs);
+}
+.subTitle {
+  margin-bottom: 56px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--inputs);
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 36px;
+  }
+  .subTitle {
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 28px;
+  }
+  .subTitle {
+    font-size: 18px;
+  }
+  .viewNowButton {
+    width: 100%;
+  }
+}

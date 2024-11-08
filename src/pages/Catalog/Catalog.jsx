@@ -1,5 +1,14 @@
-import DocumentTitle from '../../components/DocumentTitle';
+import CatalogList from '../../components/CatalogList/CatalogList.jsx';
+import CatalogSidebar from '../../components/CatalogSidebar/CatalogSidebar.jsx';
+import styles from './Catalog.module.css';
 
-export default function WelcomePage() {
-  return <DocumentTitle>Welcome page</DocumentTitle>;
-}
+const Catalog = () => {
+  return (
+    <section className={styles.catalog}>
+      <CatalogSidebar />
+      <CatalogList />
+    </section>
+  );
+};
+
+export default Catalog;
