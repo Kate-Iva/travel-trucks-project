@@ -43,9 +43,8 @@ if(error) return <p>Error loading campers: {error} </p>;
       <Button
         className={styles.loadMoreBtn}
         onClick={() => setPage((prevPage) => prevPage + 1)}
+        label="Load more"
       >
-
-        Load more
       </Button>
     </article>
   );

@@ -1,6 +1,9 @@
 import styles from './CatalogItem.module.css';
 import icons from '../../images/icons.svg';
 import Button from '../Button/Button.jsx';
+import CamperItemFeatures from '../CamperItemFeatures/CamperItemFeatures.jsx';
+
+import { Link } from 'react-router-dom';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -50,7 +53,11 @@ const CatalogItem = ({ camper }) => {
         </div>
         <p className={styles.comment}>{description}</p>
 
-        <Button onClick={handleOpenDetails} className={styles.showMoreBtn}>Show more</Button>
+<CamperItemFeatures camper={camper}/>
+
+        <Link to="/catalog/:id">
+            <Button onClick={handleOpenDetails} label="Show more" />
+          </Link>
       </div>
     </div>
   );
