@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'; 
 import { useNavigate } from 'react-router-dom';
 
 import icons from '../../images/icons.svg';
-
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +11,6 @@ const Header = () => {
       navigate('/');
     }
   
-
   return (
     <header>
 
@@ -25,13 +23,20 @@ const Header = () => {
       </div>
     </button>
       </div>
+
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link> 
+            <NavLink to="/" className={({ isActive }) => 
+              isActive ? styles.active : "" } >
+                 Home
+            </NavLink> 
           </li>
           <li>
-            <Link to="/catalog">Catalog</Link> 
+            <NavLink to="/catalog" className={({ isActive }) => 
+              isActive ? styles.active : "" }>
+                Catalog
+                </NavLink> 
           </li>
         </ul>
       </nav>
