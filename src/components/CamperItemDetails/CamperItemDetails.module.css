@@ -1,0 +1,45 @@
+.vehicleDetailsBlock {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vehicleDetailsBlock h3 {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--main);
+}
+
+.vehicleDetailsTable {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.vehicleDetailsRow {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.vehicleDetailsRow span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--main);
+}
+
+.divider {
+    display: flex;
+    width: 100%;
+    height: 0;
+    flex-shrink: 0;
+    border-top: 1px solid var(--gray-light)
+}

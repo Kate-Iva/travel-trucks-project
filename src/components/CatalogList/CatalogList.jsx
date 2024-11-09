@@ -6,6 +6,8 @@ import { selectCatalogList, selectIsLoading, selectError } from '../../redux/cam
 import { Fragment, useEffect, useState } from 'react';
 import { fetchCampers } from '../../redux/campers/operations.js';
 
+import Loader from '../Loader/Loader.jsx';
+
 const CatalogList = () => {
 
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ console.log(page, limit);
 
   console.log(campers);
 
-if(isLoading) return <p>Loading</p>;
+if(isLoading) return <Loader />;
 if(error) return <p>Error loading campers: {error} </p>;
 
   return (

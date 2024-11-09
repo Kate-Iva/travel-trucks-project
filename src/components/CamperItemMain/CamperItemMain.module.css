@@ -1,0 +1,97 @@
+.camperMainInfoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+margin: 0 auto;
+align-items: flex-start;
+width: 1440px;
+padding-left: 64px;
+padding-right: 64px;
+}
+
+.camperTitlePriceBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.camperTitlePriceBlock h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--main);
+    margin-bottom: 8px;
+}
+
+.reviewsLocationBlock {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.reviewsBlock {
+    display: flex;
+}
+
+.reviewsBlock span {
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration-line: underline;
+
+    color: var(--main);
+}
+
+.locationBlock {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.star,
+.map {
+    display: flex;
+    align-self: center;
+    height: 16px;
+    width: 16px;
+    flex: 1 0 0;
+}
+
+.star {
+    fill: var(--rating);
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--main);
+}
+
+.gallery {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+
+.img,
+.imgBlock {
+    width: 292px;
+    height: 312px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 10px;
+    background: lightgray -57.393px -4.681px / 195.679% 103.001% no-repeat;
+}
+
+.camperTextInfo {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--text);
+}

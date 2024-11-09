@@ -55,7 +55,7 @@ const CatalogItem = ({ camper }) => {
 
 <CamperItemFeatures camper={camper}/>
 
-        <Link to="/catalog/:id">
+        <Link to={`/catalog/${id}`}>
             <Button onClick={handleOpenDetails} label="Show more" />
           </Link>
       </div>
