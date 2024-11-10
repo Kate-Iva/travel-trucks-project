@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Button from '../../components/Button/Button.jsx';
-import styles from './HomePage.module.css'; // Імпортуємо стилі для HomePage
+import styles from './HomePage.module.css'; 
+import { useDispatch } from 'react-redux';
+import {resetCampers} from '../../redux/campers/slice.js';
+import { useNavigate } from 'react-router-dom';
+
 const HomePage = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function handleClick() {
+    dispatch(resetCampers());
+      navigate('/');
+    }
+
   return (
     <div className={styles.homePage}>
       <div className={styles.container}>
@@ -10,9 +22,9 @@ const HomePage = () => {
           <h2 className={styles.subTitle}>
             You can find everything you want in our catalog.
           </h2>
-          <Link to="/catalog">
+          <NavLink onClick={handleClick} to="/catalog">
             <Button label="View Now" />
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

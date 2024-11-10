@@ -51,8 +51,6 @@ console.log(page, limit);
     isFeatureTrue,
   ]);
 
-  console.log(campers);
-
 if(isLoading) return <Loader />;
 if(error) return <p>Error loading campers: {error} </p>;
 

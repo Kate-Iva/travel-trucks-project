@@ -10,8 +10,6 @@ export const fetchCampers = createAsyncThunk(
       const response = await axios.get('/campers', 
         {params: {page, limit},
       });
-
-      console.log(response.data);
       
       return response.data;
     } catch (error) {

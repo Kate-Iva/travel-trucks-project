@@ -5,7 +5,7 @@ const initialState = {
   items: [],
   camper: null,
   total: 0,
-  status: 'idle' | 'loading' | 'failed',
+  status: 'idle',
   isLoading: false,
 };
 

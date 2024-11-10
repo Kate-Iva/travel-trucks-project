@@ -1,13 +1,18 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'; 
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {resetCampers} from '../../redux/campers/slice.js';
 
 import icons from '../../images/icons.svg';
 
 const Header = () => {
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   function handleClick() {
+    dispatch(resetCampers());
       navigate('/');
     }
   
@@ -27,13 +32,13 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => 
+            <NavLink onClick={handleClick} to="/" className={({ isActive }) => 
               isActive ? styles.active : "" } >
                  Home
             </NavLink> 
           </li>
           <li>
-            <NavLink to="/catalog" className={({ isActive }) => 
+            <NavLink onClick={handleClick} to="/catalog" className={({ isActive }) => 
               isActive ? styles.active : "" }>
                 Catalog
                 </NavLink> 
