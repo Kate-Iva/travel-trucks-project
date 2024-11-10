@@ -57,6 +57,7 @@
 .rating {
     display: flex;
     gap: 4px;
+    margin-top: 4px;
 }
 
 .star {
@@ -70,6 +71,7 @@
 
 .gray {
     fill: var(--badges);
+    margin-top: 4px;
 }
 
 .flex {

@@ -1,4 +1,4 @@
-.filters_wrap {
+.filtersWrap {
     display: flex;
     flex-direction: column;
     width: 360px;
@@ -7,13 +7,13 @@
 
 /*! ================================= Location ================================= */
 
-.location_block {
+.locationBlock {
     display: flex;
     flex-direction: column;
     row-gap: 8px;
 }
 
-.location_title {
+.locationTitle {
     align-self: stretch;
 
     font-size: 16px;
@@ -22,7 +22,7 @@
     color: var(--gray);
 }
 
-.map_block {
+.mapBlock {
     display: flex;
     width: 360px;
     height: 56px;
@@ -39,9 +39,9 @@
     height: 20px;
 }
 
-.map_location,
-.map_location:active,
-.map_location:focus {
+.mapLocation,
+.mapLocation:active,
+.mapLocation:focus {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
@@ -53,26 +53,26 @@
 
 /*? ================================== Filters ================================== */
 
-.filters_form__block {
+.filtersFormBlock {
     display: flex;
     flex-direction: column;
     row-gap: 32px;
 }
 
-.filters_title {
+.filtersTitle {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
     color: var(--text);
 }
 
-.filter_group {
+.filterGroup {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.filter_group__title {
+.filterGroupTitle {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.5;
@@ -85,14 +85,14 @@
     border-top: 1px solid var(--gray-light);
 }
 
-.filter_group__list {
+.filterGroupList {
     display: flex;
     flex-wrap: wrap;
     column-gap: 12px;
     row-gap: 8px;
 }
 
-.filter_group__item {
+.filterGroupItem {
     display: flex;
     width: 360px;
     height: 96px;
@@ -111,17 +111,17 @@
     box-sizing: border-box;
 }
 
-.filter_group__item:hover,
-.filter_group__item_active {
+.filterGroupItem:hover,
+.filterGroupItemActive {
     border-color: var(--button);
 }
 
-.filter_group__img {
+.filterGroupImg {
     width: 32px;
     height: 32px;
 }
 
-.filter_group__text {
+.filterGroupText {
     text-align: center;
 
     font-size: 16px;

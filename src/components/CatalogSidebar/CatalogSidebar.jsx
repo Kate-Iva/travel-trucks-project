@@ -16,7 +16,7 @@ const initialActiveFeatures = {
   microwave: false,
   radio: false,
   gas: false,
-  water: false
+  water: false,
 };
 
 const filterActiveFeatures = (features) => {
@@ -68,28 +68,28 @@ const CatalogSidebar = () => {
   };
 
   return (
-    <aside className={styles.filters_wrap}>
-      <div className={styles.location_block}>
-        <span className={styles.location_title}>Location</span>
-        <div className={styles.map_block}>
+    <aside className={styles.filtersWrap}>
+      <div className={styles.locationBlock}>
+        <span className={styles.locationTitle}>Location</span>
+        <div className={styles.mapBlock}>
           <svg className={styles.map}>
             <use href={`${icons}#map`} />
           </svg>
           <input
             type="text"
-            className={styles.map_location}
+            className={styles.mapLocation}
             placeholder="City"
             value={locationValue}
             onChange={(event) => handleChangeLocationValue(event.target.value)}
           />
         </div>
       </div>
-      <div className={styles.filters_form__block}>
-        <span className={styles.filters_title}>Filters</span>
-        <div className={styles.filter_group}>
-          <h3 className={styles.filter_group__title}>Vehicle equipment</h3>
+      <div className={styles.filtersFormBlock}>
+        <span className={styles.filtersTitle}>Filters</span>
+        <div className={styles.filterGroup}>
+          <h3 className={styles.filterGroupTitle}>Vehicle equipment</h3>
           <div className={styles.divider} />
-          <ul className={styles.filter_group__list}>
+          <ul className={styles.filterGroupList}>
             {vehicleEquipment.map(({ name, title }) => {
               const isActiveFeature = activeFeatures[name];
               const isAutomatic = name === 'automatic' && transmissionType !== null;
@@ -97,7 +97,7 @@ const CatalogSidebar = () => {
               return (
                 <li
                   key={name}
-                  className={`${styles.filter_group__item} ${isActive ? styles.filter_group__item_active : ''}`}
+                  className={`${styles.filterGroupItem} ${isActive ? styles.filterGroupItemActive : ''}`}
                   onClick={() => {
                     if (name === 'automatic') {
                       handleTransmission('automatic');
@@ -106,31 +106,31 @@ const CatalogSidebar = () => {
                     }
                   }}
                 >
-                  <svg className={styles.filter_group__img}>
+                  <svg className={styles.filterGroupImg}>
                     <use href={`${icons}#${name.toLowerCase()}`} />
                   </svg>
-                  <span className={styles.filter_group__text}>{title}</span>
+                  <span className={styles.filterGroupText}>{title}</span>
                 </li>
               );
             })}
           </ul>
         </div>
-        <div className={styles.filter_group}>
-          <h3 className={styles.filter_group__title}>Vehicle type</h3>
+        <div className={styles.filterGroup}>
+          <h3 className={styles.filterGroupTitle}>Vehicle type</h3>
           <div className={styles.divider} />
-          <ul className={styles.filter_group__list}>
+          <ul className={styles.filterGroupList}>
             {vehicleType.map(({ name, title }) => {
               const isActive = name === activeVehicleType;
               return (
                 <li
                   key={name}
-                  className={`${styles.filter_group__item} ${isActive ? styles.filter_group__item_active : ''}`}
+                  className={`${styles.filterGroupItem} ${isActive ? styles.filterGroupItemActive : ''}`}
                   onClick={() => handleChangeActiveVehicleType(name)}
                 >
-                  <svg className={styles.filter_group__img} width="32px" height="32px">
+                  <svg className={styles.filterGroupImg} width="32px" height="32px">
                     <use href={`${icons}#${name}`} />
                   </svg>
-                  <span className={styles.filter_group__text}>{title}</span>
+                  <span className={styles.filterGroupText}>{title}</span>
                 </li>
               );
             })}

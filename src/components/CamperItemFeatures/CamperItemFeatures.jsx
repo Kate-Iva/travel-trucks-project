@@ -11,8 +11,8 @@ const CampersItemFeatures = ({ camper }) => {
     { condition: camper?.radio, imgLabel: 'radio', featureName: 'Radio' },
     { condition: camper?.refrigerator, imgLabel: 'refrigerator', featureName: 'Refrigerator' },
     { condition: camper?.microwave, imgLabel: 'microwave', featureName: 'Microwave' },
-    { condition: camper?.gas === 'gas', imgLabel: 'gas', featureName: 'Gas' },
-    { condition: camper?.water === 'water', imgLabel: 'water', featureName: 'Water' },
+    { condition: camper?.gas, imgLabel: 'gas', featureName: 'Gas' },
+    { condition: camper?.water, imgLabel: 'water', featureName: 'Water' },
   ];
   return (
     <div className={style.featuresItemBlock}>
