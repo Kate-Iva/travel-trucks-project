@@ -1,0 +1,132 @@
+.filters_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    gap: 40px;
+}
+
+/*! ================================= Location ================================= */
+
+.location_block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.location_title {
+    align-self: stretch;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gray);
+}
+
+.map_block {
+    display: flex;
+    width: 360px;
+    height: 56px;
+    align-items: center;
+    padding-left: 20px;
+    gap: 8px;
+    border-radius: 12px;
+    background-color: var(--inputs);
+    cursor: pointer;
+}
+
+.map {
+    width: 20px;
+    height: 20px;
+}
+
+.map_location,
+.map_location:active,
+.map_location:focus {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--main);
+    border: none;
+    background-color: inherit;
+    outline: none;
+}
+
+/*? ================================== Filters ================================== */
+
+.filters_form__block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.filters_title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.filter_group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filter_group__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--main);
+}
+
+.divider {
+    width: 360px;
+    height: 0px;
+    border-top: 1px solid var(--gray-light);
+}
+
+.filter_group__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 8px;
+}
+
+.filter_group__item {
+    display: flex;
+    width: 360px;
+    height: 96px;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    width: 112px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+    mix-blend-mode: multiply;
+    transition: border-color ease-in-out 200ms;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.filter_group__item:hover,
+.filter_group__item_active {
+    border-color: var(--button);
+}
+
+.filter_group__img {
+    width: 32px;
+    height: 32px;
+}
+
+.filter_group__text {
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.08px;
+    color: var(--main);
+}

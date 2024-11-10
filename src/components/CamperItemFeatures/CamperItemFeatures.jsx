@@ -1,36 +1,29 @@
-import FeaturesItem from '../FeatureItem/FeatureItem.jsx'; 
+import FeaturesItem from '../FeatureItem/FeatureItem.jsx';
 import style from './CamperItemFeatures.module.css';
 const CampersItemFeatures = ({ camper }) => {
+  const featuresMap = [
+    { condition: camper?.transmission === 'automatic', imgLabel: 'automatic', featureName: 'Automatic' },
+    { condition: camper?.engine === 'petrol', imgLabel: 'petrol', featureName: 'Petrol' },
+    { condition: camper?.kitchen, imgLabel: 'kitchen', featureName: 'Kitchen' },
+    { condition: camper?.AC, imgLabel: 'ac', featureName: 'AC' },
+    { condition: camper?.TV, imgLabel: 'tv', featureName: 'TV' },
+    { condition: camper?.bathroom, imgLabel: 'bathroom', featureName: 'Bathroom' },
+    { condition: camper?.radio, imgLabel: 'radio', featureName: 'Radio' },
+    { condition: camper?.refrigerator, imgLabel: 'refrigerator', featureName: 'Refrigerator' },
+    { condition: camper?.microwave, imgLabel: 'microwave', featureName: 'Microwave' },
+    { condition: camper?.gas === 'gas', imgLabel: 'gas', featureName: 'Gas' },
+    { condition: camper?.water === 'water', imgLabel: 'water', featureName: 'Water' },
+  ];
   return (
     <div className={style.featuresItemBlock}>
-      {camper?.transmission === 'automatic' && (
-        <FeaturesItem imgLabel="automatic" featureName="Automatic" />
-      )}
-      {camper?.engine === 'petrol' && (
-        <FeaturesItem imgLabel="petrol" featureName="Petrol" />
-      )}
-      {camper?.kitchen && (
-        <FeaturesItem imgLabel="kitchen" featureName="Kitchen" />
-      )}
-      {camper?.AC && <FeaturesItem imgLabel="ac" featureName="AC" />}
-      {camper?.TV && <FeaturesItem imgLabel="tv" featureName="TV" />}
-      {camper?.bathroom && (
-        <FeaturesItem imgLabel="bathroom" featureName="Bathroom" />
-      )}
-      {camper?.radio && (
-        <FeaturesItem imgLabel="radio" featureName="Radio" />
-      )}
-      {camper?.refrigerator && (
-        <FeaturesItem imgLabel="refrigerator" featureName="Refrigerator" />
-      )}
-      {camper?.microwave && (
-        <FeaturesItem imgLabel="microwave" featureName="Microwave" />
-      )}
-            {camper?.ac === 'ac' && (
-        <FeaturesItem imgLabel="ac" featureName="AC" />
-      )}
-                  {camper?.tv === 'tv' && (
-        <FeaturesItem imgLabel="tv" featureName="TV" />
+      {featuresMap.map((feature, index) =>
+        feature.condition && (
+          <FeaturesItem
+            key={index}
+            imgLabel={feature.imgLabel}
+            featureName={feature.featureName}
+          />
+        )
       )}
     </div>
   );
