@@ -5,6 +5,7 @@ const initialState = {
   transmission: null,
   features: {},
 };
+
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
