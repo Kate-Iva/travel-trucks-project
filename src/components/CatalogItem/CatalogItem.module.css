@@ -72,9 +72,9 @@
 .heart {
     cursor: pointer;
 }
-.heart:hover {
+/*.heart:hover {
     fill: var(--button);
-}
+}*/
 .star {
     fill: var(--rating);
 }

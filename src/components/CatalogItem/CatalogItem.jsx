@@ -4,15 +4,31 @@ import Button from '../Button/Button.jsx';
 import CamperItemFeatures from '../CamperItemFeatures/CamperItemFeatures.jsx';
 
 import { Link } from 'react-router-dom';
-
 import { useNavigate } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectFavorites } from '../../redux/favorites/selectors';
+
+import { addFavorite, removeFavorites } from '../../redux/favorites/slice';
+
 const CatalogItem = ({ camper }) => {
+
+  const favorites = useSelector(selectFavorites);
+  const dispatch = useDispatch();
+
   const { gallery, name, price, rating, location, description, id } = camper;
   const navigate = useNavigate();
 
   const handleOpenDetails = () => {
     navigate(`/catalog/${id}`);
+  };
+
+  const handleToggleIsFavorite = (id) => {
+if (favorites.includes(id))
+  {dispatch(removeFavorites(id));
+  } else {dispatch(addFavorite(id));
+  }
   };
 
   return (
@@ -29,8 +45,8 @@ const CatalogItem = ({ camper }) => {
             <div className={styles.price}>
               <span>€{price.toFixed(2)}</span>
               <svg
-                className={styles.heart}
-                onClick={() => {}}
+                className={`${styles.heart} ${favorites.includes(id) ? styles.favorite : ""}`}
+                onClick={() => {handleToggleIsFavorite(id)}}
               >
                 <use href={`${icons}#heart`} />
               </svg>
