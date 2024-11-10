@@ -5,7 +5,7 @@ const initialState = {
   items: [],
   camper: null,
   total: 0,
-  status: 'idle',
+  status: 'idle' | 'loading' | 'failed',
   isLoading: false,
 };
 
@@ -27,21 +27,9 @@ const campersSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        console.log('Fetched campers item: ', action.payload.items);
-
         state.status = 'idle';
-
-        const existingIds = new Set(state.items.map((item) => item.id));
-
-        const newItems = action.payload.items.filter(
-          (item) => !existingIds.has(item.id),
-        );
-
-        state.items = [...state.items, ...newItems];
+        state.items = [...state.items, ...action.payload.items];
         state.total = action.payload.total;
-        console.log('Fetched items: ', state.items);
-        console.log('Fetched total: ', state.total);
-
         state.isLoading = false;
       })
       .addCase(fetchCampers.rejected, (state) => {
