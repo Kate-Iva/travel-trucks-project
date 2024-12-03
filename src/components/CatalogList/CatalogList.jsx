@@ -1,78 +1,50 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../Button/Button';
-import CatalogItem from '../CatalogItem/CatalogItem.jsx';
 import styles from './CatalogList.module.css';
-import { selectCatalogList, selectIsLoading, selectError } from '../../redux/campers/selectors.js';
+import { selectCatalogList, selectIsLoading, selectError, selectTotalCampers } from '../../redux/campers/selectors.js';
 import { Fragment, useEffect, useState } from 'react';
 import { fetchCampers } from '../../redux/campers/operations.js';
+import CatalogItem from '../CatalogItem/CatalogItem.jsx';
 import Loader from '../Loader/Loader.jsx';
-
-import { selectBodyType, selectFeatures, selectLocation, selectTransmission } from '../../redux/filters/selectors.js';
-
 const CatalogList = () => {
-
   const dispatch = useDispatch();
-  
   const campers = useSelector(selectCatalogList);
-  const location = useSelector(selectLocation);
-  const form = useSelector(selectBodyType);
-  const features = useSelector(selectFeatures);
-  const transmission = useSelector(selectTransmission);
+  const totalCampers = useSelector(selectTotalCampers);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-
   const [page, setPage] = useState(1);
   const limit = 4;
-
-  const featuresValues = Object.values(features);
-  const isFeatureTrue = featuresValues.every((element) => element === true);
-
+  // Fetch campers when the component mounts
   useEffect(() => {
-    const params = {
-      page,
-      limit,
-      ...(location && location?.length > 0 && { location }),
-      ...(form && form?.length > 0 && { form }),
-      ...(transmission && { transmission }),
-      ...(isFeatureTrue && { ...features }),
-    };
-
-console.log(page, limit);
-
+    const params = { page, limit };
     dispatch(fetchCampers(params));
-  }, [
-    page,
-    limit,
-    form,
-    dispatch,
-    location,
-    features,
-    transmission,
-    isFeatureTrue,
-  ]);
-
-if(isLoading) return <Loader />;
-if(error) return <p>Error loading campers: {error} </p>;
-
+    window.scrollTo(0, 0);
+  }, [dispatch, page]); // Залежимо від page
+  // Load more campers when the button is clicked
+  const loadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+  if (isLoading && page === 1) return <Loader />;
+  if (error) return <p>Error loading campers: {error}</p>;
+  const displayedCampers = campers; // Всі кемпери, які вже були завантажені
+  const isLoadMoreDisabled = displayedCampers.length >= totalCampers; // Кнопка стає неактивною, якщо всі кемпери вже відображені
   return (
     <article className={styles.campersListWrapper}>
-      {campers?.map((camper) => {
-
-        return (
-          <Fragment key={camper.id}>
-            <CatalogItem camper={camper} />
-          </Fragment>
-        );
-      })}
-
-      <Button
-        className={styles.loadMoreBtn}
-        onClick={() => setPage((prevPage) => prevPage + 1)}
-        label="Load more"
-      >
-      </Button>
+      {displayedCampers?.map((camper) => (
+        <Fragment key={camper.id}>
+          <CatalogItem camper={camper}/>
+          <p>Camper ID: {camper.id}</p>
+        </Fragment>
+      ))}
+      {!isLoadMoreDisabled && (
+        <Button
+          className={styles.loadMoreBtn}
+          onClick={loadMore}
+          label="Load more"
+          disabled={isLoadMoreDisabled}
+        />
+      )}
     </article>
   );
 };
-
 export default CatalogList;

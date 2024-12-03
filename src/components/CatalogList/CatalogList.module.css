@@ -22,3 +22,17 @@
 .btn {
 
 }
+
+.loadMoreBtn:disabled {
+    background-color: gray; 
+    cursor: not-allowed; 
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px; 
+  }
+  .loadLessBtn {
+    margin-left: 10px; 
+  }

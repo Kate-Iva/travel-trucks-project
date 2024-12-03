@@ -28,8 +28,12 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.items = [...state.items, ...action.payload.items];
-        state.total = action.payload.total;
+        if (Array.isArray(action.payload.items)) {
+          state.items = [...state.items, ...action.payload.items]; 
+        } else {
+          console.error("Expected items to be an array", action.payload.items);
+        }
+        state.total = action.payload.total; 
         state.isLoading = false;
       })
       .addCase(fetchCampers.rejected, (state) => {
