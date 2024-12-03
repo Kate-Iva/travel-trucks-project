@@ -17,6 +17,8 @@ const initialActiveFeatures = {
   radio: false,
   gas: false,
   water: false,
+  petrol: false,
+  automatic: false,
 };
 
 const filterActiveFeatures = (features) => {

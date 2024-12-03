@@ -7,7 +7,7 @@ import { lazy, Suspense } from 'react';
 const HomePage = lazy(() => import('../src/pages/HomePage/HomePage.jsx'));
 const Catalog = lazy(() => import('../src/pages/Catalog/Catalog.jsx'));
 const CamperDetail = lazy(() => import('../src/pages/CamperDetail/CamperDetail.jsx'));
-
+const FavoritePage = lazy(() => import('../src/pages/FavoritePage/FavoritePage.jsx'));
 const App = () => {
 
   return (
@@ -19,6 +19,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/catalog/:id" element={<CamperDetail />} />
+            <Route path="/favorite" element={<FavoritePage />} />
           </Routes>
         </Suspense>
       </div>

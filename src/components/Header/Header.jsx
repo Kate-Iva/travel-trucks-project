@@ -15,9 +15,14 @@ const Header = () => {
     dispatch(resetCampers());
       navigate('/');
     }
+
     function handleClickCatalog() {
-     
         navigate('/catalog');
+      }
+
+      function handleClickFavorite() {
+        dispatch(resetCampers());
+        navigate('/favorite');
       }
   return (
     <header>
@@ -45,6 +50,14 @@ const Header = () => {
               isActive ? styles.active : "" }>
                 Catalog
                 </NavLink> 
+
+          </li>
+          <li>
+                <NavLink onClick={handleClickFavorite} to="/favorite" className={({ isActive }) => 
+              isActive ? styles.active : "" }>
+                Favorite
+                </NavLink> 
+
           </li>
         </ul>
       </nav>
