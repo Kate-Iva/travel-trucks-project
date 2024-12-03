@@ -33,7 +33,6 @@ const CatalogList = () => {
       {displayedCampers?.map((camper) => (
         <Fragment key={camper.id}>
           <CatalogItem camper={camper}/>
-          <p>Camper ID: {camper.id}</p>
         </Fragment>
       ))}
       {!isLoadMoreDisabled && (

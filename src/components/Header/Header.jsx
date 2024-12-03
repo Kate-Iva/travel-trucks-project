@@ -17,6 +17,7 @@ const Header = () => {
     }
 
     function handleClickCatalog() {
+      dispatch(resetCampers());
         navigate('/catalog');
       }
 

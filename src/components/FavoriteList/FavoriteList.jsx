@@ -1,50 +1,39 @@
 import { useDispatch, useSelector } from 'react-redux';
-import Button from '../Button/Button';
 import styles from './FavoriteList.module.css';
-import { selectCatalogList, selectIsLoading, selectError, selectTotalCampers } from '../../redux/campers/selectors.js';
-import { Fragment, useEffect, useState } from 'react';
+import { selectFavorites } from '../../redux/favorites/selectors.js';
+import { selectCatalogList } from '../../redux/campers/selectors.js'; 
+import { Fragment,  useEffect } from 'react';
 import { fetchCampers } from '../../redux/campers/operations.js';
 import CatalogItem from '../CatalogItem/CatalogItem.jsx';
-import Loader from '../Loader/Loader.jsx';
-const CatalogList = () => {
-  const dispatch = useDispatch();
-  const campers = useSelector(selectCatalogList);
-  const totalCampers = useSelector(selectTotalCampers);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const [page, setPage] = useState(1);
-  const limit = 4;
+
+
+const FavoriteList = () => {
+    const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites); 
+
+  const allCampers = useSelector(selectCatalogList); 
+
+  const favoriteCampers = allCampers.filter(camper => favorites.includes(camper.id));
   
   useEffect(() => {
-    const params = { page, limit };
+    const params = { favoriteCampers };
     dispatch(fetchCampers(params));
     window.scrollTo(0, 0);
-  }, [dispatch, page]); 
-  
-  const loadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-  };
-  if (isLoading && page === 1) return <Loader />;
-  if (error) return <p>Error loading campers: {error}</p>;
-  const displayedCampers = campers; 
-  const isLoadMoreDisabled = displayedCampers.length >= totalCampers; 
+  }, [dispatch]); 
+
   return (
-    <article className={styles.campersListWrapper}>
-      {displayedCampers?.map((camper) => (
-        <Fragment key={camper.id}>
-          <CatalogItem camper={camper}/>
-          <p>Camper ID: {camper.id}</p>
-        </Fragment>
-      ))}
-      {!isLoadMoreDisabled && (
-        <Button
-          className={styles.loadMoreBtn}
-          onClick={loadMore}
-          label="Load more"
-          disabled={isLoadMoreDisabled}
-        />
+    <article className={styles.favoriteListWrapper}>
+      {favoriteCampers.length > 0 ? (
+        favoriteCampers.map((camper) => (
+          <Fragment key={camper.id}>
+            <CatalogItem camper={camper} /> 
+
+          </Fragment>
+        ))
+      ) : (
+        <p>No favorite campers selected.</p> 
       )}
     </article>
   );
 };
-export default CatalogList;
+export default FavoriteList;

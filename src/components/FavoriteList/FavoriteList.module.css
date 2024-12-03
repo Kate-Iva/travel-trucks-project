@@ -1,36 +1,20 @@
-.campersListWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 888px;
-    gap: 32px;
+.favoriteListWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 650px;
+  gap: 32px;
 }
-
-.loadMoreBtn {
-    align-self: center;
-    width: 145px;
-    border: 1px solid var(--gray-light);
-    background-color: var(--white);
-    transition: border-color ease-in-out 0.3s;
-    color: #101828;
+._catalogItemWrap_yz1v4_1 {
+  width: 600px;
+  flex-direction: column;
 }
-
-.loadMoreBtn:hover,
-.loadMoreBtn.active {
-    background-color: var(--white);
-    border-color: var(--button-hover);
+._img_yz1v4_13 {
+  width: 600px;
+  margin: 0 auto;
+  align-self: center;
 }
-
-
-.loadMoreBtn:disabled {
-    background-color: gray; 
-    cursor: not-allowed; 
-  }
-
-  .buttonContainer {
-    display: flex;
-    justify-content: space-between; 
-    margin-top: 10px; 
-  }
-  .loadLessBtn {
-    margin-left: 10px; 
-  }
+._infoBlock_yz1v4_23 {
+  margin: 0 auto;
+  align-self: center;
+}
