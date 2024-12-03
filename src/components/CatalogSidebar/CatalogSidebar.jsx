@@ -1,4 +1,5 @@
 import styles from './CatalogSidebar.module.css';
+import {  useNavigate } from 'react-router-dom'; 
 import icons from '../../images/icons.svg';
 import Button from '../Button/Button.jsx';
 import { useState } from 'react';
@@ -6,7 +7,6 @@ import { clearCampers } from '../../redux/campers/operations.js';
 import { useDispatch } from 'react-redux';
 import { setForm, setLocation, setTransmission, toggleFeature } from '../../redux/filters/slice.js';
 import { vehicleEquipment, vehicleType } from '../../utils/filters.js';
-
 const initialActiveFeatures = {
   AC: false,
   bathroom: false,
@@ -20,32 +20,25 @@ const initialActiveFeatures = {
   petrol: false,
   automatic: false,
 };
-
 const filterActiveFeatures = (features) => {
   return Object.fromEntries(
     Object.entries(features).filter(([, value]) => value === true)
   );
 };
-
 const CatalogSidebar = () => {
-
   const dispatch = useDispatch();
-
+  const navigate = useNavigate(); // Використовуємо useNavigate для навігації
   const [locationValue, setLocationValue] = useState('');
   const [activeFeatures, setActiveFeatures] = useState(initialActiveFeatures);
-
   const [transmissionType, setTransmissionType] = useState(null);
   const [activeVehicleType, setActiveVehicleType] = useState('');
-
   const handleChangeLocationValue = (inputValue) => {
     setLocationValue(inputValue);
   };
-
   const handleChangeActiveVehicleType = (vehicleType) => {
     const newActiveVehicleType = vehicleType === activeVehicleType ? '' : vehicleType;
     setActiveVehicleType(newActiveVehicleType);
   };
-
   const handlePushNewFeature = (feature) => {
     const updateFeatures = {
       ...activeFeatures,
@@ -53,11 +46,9 @@ const CatalogSidebar = () => {
     };
     setActiveFeatures(updateFeatures);
   };
-
   const handleTransmission = (name) => {
     setTransmissionType(transmissionType === name ? null : name);
   };
-
   const handleFiltersFetch = () => {
     if (locationValue || activeVehicleType || Object.values(activeFeatures).some(Boolean)) {
       const filteredFeatures = filterActiveFeatures(activeFeatures);
@@ -66,9 +57,10 @@ const CatalogSidebar = () => {
       dispatch(setForm(activeVehicleType));
       dispatch(setTransmission(transmissionType));
       dispatch(toggleFeature(filteredFeatures));
+      // Перенаправлення на сторінку з фільтрами
+      navigate('/filter'); // Додано для навігації на сторінку фільтрів
     }
   };
-
   return (
     <aside className={styles.filtersWrap}>
       <div className={styles.locationBlock}>
@@ -139,7 +131,10 @@ const CatalogSidebar = () => {
           </ul>
         </div>
       </div>
-      <Button onClick={handleFiltersFetch} label="Search" />
+      <Button
+        label="Search"
+        onClick={handleFiltersFetch} // Додаємо обробник на кнопку
+      />
     </aside>
   );
 };
