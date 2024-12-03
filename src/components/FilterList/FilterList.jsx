@@ -11,18 +11,9 @@ const FilterList = () => {
 
 
   const allCampers = useSelector(selectCatalogList);
-  console.log('allCampers:', allCampers);
-
   const location = useSelector(selectLocation);
-  console.log('Location:', location);
-
   const form = useSelector(selectBodyType);
-console.log('Form:',  form);
-
   const features = useSelector(selectFeatures);
-  console.log('Features:',  features );
-
-  console.log('Filters:', { location, form, features });
  
   useEffect(() => {
  
@@ -31,10 +22,6 @@ console.log('Form:',  form);
 
 
   const filterCampers = (campers) => {
-    console.log('Campers:', campers);
-
-
-
     return campers.filter(camper => {
       const matchesLocation = location ? camper.location.includes(location) : true;
 
@@ -48,7 +35,7 @@ console.log('Form:',  form);
   };
  
   const filteredCampers = filterCampers(allCampers);
-  console.log('Filtered campers:', filteredCampers);
+  
   return (
     <article className={styles.filterListWrapper}>
       {filteredCampers.length > 0 ? (
