@@ -14,20 +14,20 @@ const CatalogList = () => {
   const error = useSelector(selectError);
   const [page, setPage] = useState(1);
   const limit = 4;
-  // Fetch campers when the component mounts
+  
   useEffect(() => {
     const params = { page, limit };
     dispatch(fetchCampers(params));
     window.scrollTo(0, 0);
-  }, [dispatch, page]); // Залежимо від page
-  // Load more campers when the button is clicked
+  }, [dispatch, page]); 
+  
   const loadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
   if (isLoading && page === 1) return <Loader />;
   if (error) return <p>Error loading campers: {error}</p>;
-  const displayedCampers = campers; // Всі кемпери, які вже були завантажені
-  const isLoadMoreDisabled = displayedCampers.length >= totalCampers; // Кнопка стає неактивною, якщо всі кемпери вже відображені
+  const displayedCampers = campers; 
+  const isLoadMoreDisabled = displayedCampers.length >= totalCampers; 
   return (
     <article className={styles.campersListWrapper}>
       {displayedCampers?.map((camper) => (

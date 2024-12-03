@@ -15,7 +15,10 @@ const Header = () => {
     dispatch(resetCampers());
       navigate('/');
     }
-  
+    function handleClickCatalog() {
+     
+        navigate('/catalog');
+      }
   return (
     <header>
 
@@ -38,7 +41,7 @@ const Header = () => {
             </NavLink> 
           </li>
           <li>
-            <NavLink onClick={handleClick} to="/catalog" className={({ isActive }) => 
+            <NavLink onClick={handleClickCatalog} to="/catalog" className={({ isActive }) => 
               isActive ? styles.active : "" }>
                 Catalog
                 </NavLink> 
