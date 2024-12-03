@@ -2,7 +2,7 @@ import FeaturesItem from '../FeatureItem/FeatureItem.jsx';
 import style from './CamperItemFeatures.module.css';
 const CampersItemFeatures = ({ camper }) => {
   const featuresMap = [
-    { condition: camper?.transmission === 'automatic', imgLabel: 'automatic', featureName: 'Automatic' },
+   // { condition: camper?.transmission === 'automatic', imgLabel: 'automatic', featureName: 'Automatic' },
     { condition: camper?.engine === 'petrol', imgLabel: 'petrol', featureName: 'Petrol' },
     { condition: camper?.kitchen, imgLabel: 'kitchen', featureName: 'Kitchen' },
     { condition: camper?.AC, imgLabel: 'ac', featureName: 'AC' },
