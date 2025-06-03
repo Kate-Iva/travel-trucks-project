@@ -125,19 +125,27 @@ font-size: 18px;
   
   @media (min-width: 768px){
     .catalogItemWrap {
-        max-width: 888px;
-        flex-direction: row;
+        max-width: 100%;
+
     }
   }
   
   @media (min-width: 1200px){
     .catalogItemWrap {
-        max-width: 888px;
+        max-width: 100%;
+        flex-direction: row;
+    }
+    .titleBlock {
+flex-direction: row;
+    }
+    .comment {
+        width: 500px;
     }
   }
   
   @media (min-width: 1440px){
     .catalogItemWrap {
+        min-width: 888px;
         max-width: 1440px;
     }
 

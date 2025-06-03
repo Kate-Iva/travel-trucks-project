@@ -12,24 +12,30 @@
 @media (min-width: 576px){
     .catalog {
         max-width: 576px;
+
     }
   }
   
   @media (min-width: 768px){
     .catalog {
         max-width: 768px;
+        flex-direction: row;
+        gap: 5px;
+        padding: 0 10px;
     }
   }
   
   @media (min-width: 1200px){
     .catalog {
         max-width: 1200px;
+        gap: 35px;
     }
   }
   
   @media (min-width: 1440px){
     .catalog {
         max-width: 1440px;
+        gap: 64px;
     }
 
   }

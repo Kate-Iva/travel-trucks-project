@@ -5,3 +5,15 @@
     gap: 8px;
     width: 300px;
 }
+@media (min-width: 1200px){
+    .featuresItemBlock {
+        width: 500px;
+    }
+  }
+  
+  @media (min-width: 1440px){
+    .catalogItemWrap {
+        width: 888px;
+    }
+
+  }

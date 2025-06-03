@@ -34,3 +34,50 @@
   .loadLessBtn {
     margin-left: 10px; 
   }
+
+
+@media (min-width: 576px){
+  .campersListWrapper{
+    min-width: 100%;
+  }
+  .catalogItemWrap {
+      max-width: 100%;
+  }
+  .infoBlock {
+      width: 525px;
+  }
+}
+
+@media (min-width: 768px){
+  .campersListWrapper{
+    min-width: 100%;
+  }
+  .catalogItemWrap {
+      max-width: 100%;
+
+  }
+}
+
+@media (min-width: 1200px){
+  .campersListWrapper{
+  
+  }
+  .catalogItemWrap {
+      max-width: 100%;
+      flex-direction: row;
+  }
+  .titleBlock {
+flex-direction: row;
+  }
+  .comment {
+      width: 500px;
+  }
+}
+
+@media (min-width: 1440px){
+  .catalogItemWrap {
+      min-width: 888px;
+      max-width: 1440px;
+  }
+
+}
