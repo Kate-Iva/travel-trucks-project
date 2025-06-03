@@ -1,9 +1,35 @@
 .catalog {
     display: flex;
     gap: 64px;
-    max-width: 1440px;
+    max-width: 320px;
     margin: 0 auto;
-    padding-left: 64px;
-    padding-right: 64px;
+   /* padding-left: 64px;
+    padding-right: 64px;*/
     margin-top: 48px;
+    flex-direction: column;
 }
+
+@media (min-width: 576px){
+    .catalog {
+        max-width: 576px;
+    }
+  }
+  
+  @media (min-width: 768px){
+    .catalog {
+        max-width: 768px;
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .catalog {
+        max-width: 1200px;
+    }
+  }
+  
+  @media (min-width: 1440px){
+    .catalog {
+        max-width: 1440px;
+    }
+
+  }

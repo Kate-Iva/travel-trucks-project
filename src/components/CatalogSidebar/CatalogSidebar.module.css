@@ -1,7 +1,7 @@
 .filtersWrap {
     display: flex;
     flex-direction: column;
-    width: 360px;
+    width: 320px;
     gap: 40px;
 }
 
@@ -24,7 +24,7 @@
 
 .mapBlock {
     display: flex;
-    width: 360px;
+    width: 300px;
     height: 56px;
     align-items: center;
     padding-left: 20px;
@@ -94,13 +94,12 @@
 
 .filterGroupItem {
     display: flex;
-    width: 360px;
     height: 96px;
     flex-direction: column;
     list-style-type: none;
     justify-content: center;
     align-items: center;
-    width: 112px;
+    width: 90px;
     align-items: center;
     gap: 8px;
     border-radius: 12px;
