@@ -1,7 +1,7 @@
 .formBlock {
     display: flex;
-    width: 641px;
-    padding: 44px;
+    width: 320px;
+    padding: 14px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -9,6 +9,7 @@
     border-radius: 10px;
     border: 1px solid var(--gray-light);
     font-family: var(--font-family);
+    margin-top: 10px;
 }
 
 .formTitleBlock {
@@ -61,4 +62,25 @@
 .btnBlock {
 display: flex;
 align-self: center;
+}
+
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+    .formBlock {
+        width: 631px;
+        padding: 44px 52px;
+    }
+}
+
+@media (min-width: 1200px){
+.formBlock{
+    margin-top: 0;
+}
+}
+
+@media (min-width: 1440px){
+
 }

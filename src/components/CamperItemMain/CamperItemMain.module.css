@@ -4,9 +4,9 @@
     gap: 28px;
 margin: 0 auto;
 align-items: flex-start;
-width: 1440px;
-padding-left: 64px;
-padding-right: 64px;
+width: 320px;
+padding-left: 14px;
+padding-right: 14px;
 }
 
 .camperTitlePriceBlock {
@@ -74,15 +74,15 @@ padding-right: 64px;
 
 .gallery {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     width: 100%;
 }
 
 
 .img,
 .imgBlock {
-    width: 292px;
-    height: 312px;
+    width: 42px;
+    height: 62px;
     flex-shrink: 0;
     object-fit: cover;
     border-radius: 10px;
@@ -94,4 +94,39 @@ padding-right: 64px;
     font-weight: 400;
     line-height: 24px;
     color: var(--text);
+}
+
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+    .img,
+    .imgBlock {
+        width: 142px;
+        height: 162px;
+    }
+}
+
+@media (min-width: 1200px){
+    .camperMainInfoBlock {
+    width: 1200px;
+    padding-left: 64px;
+    padding-right: 64px;
+    }
+    .gallery {
+        gap: 30px;
+    }
+    .img,
+    .imgBlock {
+        width: 292px;
+        height: 312px;
+    }
+}
+
+@media (min-width: 1440px){
+    .camperMainInfoBlock {
+        width: 1440px;
+        }
+        
 }

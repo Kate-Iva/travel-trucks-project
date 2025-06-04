@@ -1,8 +1,7 @@
 .reviewsBlock {
     flex-direction: column;
-    width: 631px;
+    width: 320px;
     gap: 44px;
-
 }
 
 .reviewsItem {
@@ -81,3 +80,21 @@
 .none {
     display: none;
 }
+
+@media (min-width: 576px){
+
+    }
+    
+    @media (min-width: 768px){
+        .reviewsBlock {
+            width: 631px;
+        }
+    }
+    
+    @media (min-width: 1200px){
+
+    }
+    
+    @media (min-width: 1440px){
+
+    }

@@ -1,7 +1,7 @@
 .featuresBlock {
     flex-direction: column;
-    width: 631px;
-    padding: 44px 52px;
+    width: 320px;
+    padding: 14px 12px;
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -15,4 +15,23 @@
 
 .none {
     display: none;
+}
+
+@media (min-width: 576px){
+
+}
+
+@media (min-width: 768px){
+    .featuresBlock {
+        width: 631px;
+        padding: 44px 52px;
+    }
+}
+
+@media (min-width: 1200px){
+
+}
+
+@media (min-width: 1440px){
+
 }

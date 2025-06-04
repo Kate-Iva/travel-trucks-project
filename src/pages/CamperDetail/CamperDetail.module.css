@@ -1,7 +1,7 @@
 .camperDetailWrap {
     display: flex;
     flex-direction: column;
-    padding: 48px 64px;
+    padding: 18px 14px;
     gap: 60px;
     margin: 0 auto;
     align-items: center;
@@ -11,10 +11,11 @@
 .featureReviewsBlock {
     display: flex;
     flex-direction: column;
-    gap: 44px;
-    width: 1440px;
-    padding-left: 64px;
-    padding-right: 64px;
+    gap: 14px;
+    width: 320px;
+    padding-left: 14px;
+    padding-right: 14px;
+    justify-content: center;
 }
 
 .tabsBlock {
@@ -49,6 +50,42 @@
 }
 
 .featuresReviewsFormBlock {
-    display: flex;
-    gap: 40px;
+    display: block;
 }
+
+
+  @media (min-width: 576px){
+  /* .featureReviewsBlock {
+        width: 576px;
+    }*/ 
+    }
+    
+    @media (min-width: 768px){
+        .featureReviewsBlock {
+            width: 768px;
+            align-items: center;
+        }
+    }
+    
+    @media (min-width: 1200px){
+        .camperDetailWrap {
+            padding: 48px 64px;
+        }
+        .featureReviewsBlock {
+            gap: 44px;
+            width: 1200px;
+            padding-left: 64px;
+            padding-right: 64px;
+            align-items: normal;
+        }
+        .featuresReviewsFormBlock {
+            display: flex;
+            gap: 40px;
+        }
+    }
+    
+    @media (min-width: 1440px){
+        .featureReviewsBlock {
+            width: 1440px;
+        }
+    }
