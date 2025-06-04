@@ -9,6 +9,7 @@
     padding: 24px;
     box-sizing: border-box;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .img {
@@ -116,10 +117,10 @@ font-size: 18px;
 
 @media (min-width: 576px){
     .catalogItemWrap {
-        max-width: 576px;
+        max-width: 300px;
     }
     .infoBlock {
-        width: 525px;
+        width: 300px;
     }
   }
   
@@ -132,15 +133,13 @@ font-size: 18px;
   
   @media (min-width: 1200px){
     .catalogItemWrap {
-        max-width: 100%;
+        min-width: 788px;
         flex-direction: row;
     }
     .titleBlock {
 flex-direction: row;
     }
-    .comment {
-        width: 500px;
-    }
+
   }
   
   @media (min-width: 1440px){
